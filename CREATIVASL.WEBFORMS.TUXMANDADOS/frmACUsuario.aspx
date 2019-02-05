@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmPrueba.aspx.cs" Inherits="CREATIVASL.WEBFORMS.TUXMANDADOS.frmPrueba" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmACUsuario.aspx.cs" Inherits="CREATIVASL.WEBFORMS.TUXMANDADOS.frmACUsuario" %>
 
 <!DOCTYPE html>
 

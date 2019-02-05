@@ -133,18 +133,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="frmPrueba.aspx" />
+    <Content Include="frmACUsuario.aspx" />
+    <Content Include="frmInfoUser.aspx" />
+    <Content Include="frmLogin.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmPrueba.aspx.cs">
-      <DependentUpon>frmPrueba.aspx</DependentUpon>
+    <Compile Include="frmACUsuario.aspx.cs">
+      <DependentUpon>frmACUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="frmPrueba.aspx.designer.cs">
-      <DependentUpon>frmPrueba.aspx</DependentUpon>
+    <Compile Include="frmACUsuario.aspx.designer.cs">
+      <DependentUpon>frmACUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfoUser.aspx.cs">
+      <DependentUpon>frmInfoUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmInfoUser.aspx.designer.cs">
+      <DependentUpon>frmInfoUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.aspx.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLogin.aspx.designer.cs">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -160,6 +176,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

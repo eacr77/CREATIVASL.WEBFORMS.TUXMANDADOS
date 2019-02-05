@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -10,17 +9,17 @@ using CREATIVASL.DLL.TUXMANDADOS.DATOS;
 using CREATIVASL.DLL.TUXMANDADOS.GLOBAL;
 namespace CREATIVASL.WEBFORMS.TUXMANDADOS
 {
-    public partial class frmPrueba : System.Web.UI.Page
+    public partial class frmLogin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            if (true)
+            if (!IsPostBack)
+            //if (true)
             {
-                //if (Page.Request.HttpMethod == "POST")
-                if (true)
+                if (Page.Request.HttpMethod == "POST")
+                //if (true)
                 {
-                   
+                    SolicitudLogin solicitudLogin = null;
                     string Valor = "";
                     //Leer JSON
                     try
@@ -30,33 +29,38 @@ namespace CREATIVASL.WEBFORMS.TUXMANDADOS
                             Valor = streamReader.ReadToEnd();
                         }
                         System.Web.Script.Serialization.JavaScriptSerializer jsonSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
-                        //solicitudWodGlobal = jsonSerializer.Deserialize<SolicitudWodGlobal>(Valor);
+                        solicitudLogin = jsonSerializer.Deserialize<SolicitudLogin>(Valor);
                     }
                     catch (Exception)
                     {
                         Valor = "";
                     }
-                    if (true)
-                    //if (Valor != "")
+                    //if (true)
+                    if (Valor != "")
                     {
-                        Cliente clien = new Cliente();
+                        LoginApp loginApp = new LoginApp();
                         AppDatos appDatos = new AppDatos();
-                        clien.conexion = ConfigurationManager.ConnectionStrings["Conexion_App"].ConnectionString;                       
+                        loginApp.conexion = ConfigurationManager.ConnectionStrings["Conexion_App"].ConnectionString;
+                        loginApp.usuario = solicitudLogin.usuario;
+                        loginApp.password = solicitudLogin.password;
+                        //loginApp.usuario = "eacr77";
+                        //loginApp.password = "123456";
+
                         try
                         {
-                            appDatos.Getprueba(clien);
+                            appDatos.login(loginApp);
                         }
                         catch (Exception ex)
                         {
-                            clien.resultado = ex.Message;
-                            clien.DatosJson = "No se encontró.";
+                            loginApp.resultado = ex.Message;
+                            loginApp.DatosJson = "No se encontró.";
                         }
                         Response.Clear();
                         Response.ContentType = "application/text;";
-                        if (clien.resultado == "REGOK")
-                            Response.Write(clien.DatosJson);
+                        if (loginApp.resultado == "REGOK")
+                            Response.Write(loginApp.DatosJson);
                         else
-                            Response.Write("Error " + clien.resultado);
+                            Response.Write("Error " + loginApp.resultado);
                         Response.End();
                     }
                     else
@@ -75,7 +79,6 @@ namespace CREATIVASL.WEBFORMS.TUXMANDADOS
                     Response.End();
                 }
             }
-
         }
     }
 }

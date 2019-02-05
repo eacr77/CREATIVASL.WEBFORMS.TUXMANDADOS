@@ -11,7 +11,7 @@ namespace CREATIVASL.WEBFORMS.TUXMANDADOS
 {
 
 
-    public partial class frmPrueba
+    public partial class frmInfoUser
     {
 
         /// <summary>
