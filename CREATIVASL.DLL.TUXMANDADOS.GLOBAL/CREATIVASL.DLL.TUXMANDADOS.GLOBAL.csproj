@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ACUsuario.cs" />
     <Compile Include="ACUsuarioJson.cs" />
+    <Compile Include="EUsuario.cs" />
     <Compile Include="InfoUser.cs" />
     <Compile Include="InfoUserJson.cs" />
     <Compile Include="LoginApp.cs" />
@@ -52,6 +53,9 @@
     <Compile Include="SolicitudACUsuario.cs" />
     <Compile Include="SolicitudInfoUser.cs" />
     <Compile Include="SolicitudLogin.cs" />
+    <Compile Include="SolicitudValidEmail.cs" />
+    <Compile Include="ValidEmail.cs" />
+    <Compile Include="ValidEmailJson.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

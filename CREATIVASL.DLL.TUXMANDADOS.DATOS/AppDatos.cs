@@ -118,6 +118,57 @@ namespace CREATIVASL.DLL.TUXMANDADOS.DATOS
                 throw ex;
             }
         }
+        public void ValidEmail(ValidEmail valido)
+        {
+            try
+            {
+                
+                DataSet ds = SqlHelper.ExecuteDataset(valido.conexion, "spCIDBD_get_ValidarCorreo", valido.Correo);
+                valido.resultado = "No se encontraron resultados";
+                if (ds != null)
+                {
+                    if (ds.Tables[0] != null)
+                    {
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            valido.resultado = "REGOK";
+                            valido.valido = Convert.ToInt32(ds.Tables[0].Rows[0]["Resultado"]);
+                            valido.token = ds.Tables[0].Rows[0]["token"].ToString();
+                            valido.GenerarJSON();
+
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        public void recuperar(EUsuario user)
+        {
+            try
+            {
+                object[] Valores = { user.Token, user.Contraseña };
+                DataSet ds = SqlHelper.ExecuteDataset(user.Conexion, "CIDBD_UpdContraseña", Valores);                
+                if (ds != null)
+                {
+                    if (ds.Tables[0] != null)
+                    {
+                        if (ds.Tables[0].Rows.Count > 0)
+                        {
+                            user.Resultado = Convert.ToInt32(ds.Tables[0].Rows[0]["resultado"]);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
     }
 }
