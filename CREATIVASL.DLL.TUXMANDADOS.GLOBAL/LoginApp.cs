@@ -81,5 +81,11 @@ namespace CREATIVASL.DLL.TUXMANDADOS.GLOBAL
             DatosJson += loginJson.ToJSON();
             DatosJson += "";
         }
+        public string ToJSON()
+        {
+            System.Web.Script.Serialization.JavaScriptSerializer jsonSerializer
+                = new System.Web.Script.Serialization.JavaScriptSerializer();
+            return jsonSerializer.Serialize(this);
+        }
     }
 }
