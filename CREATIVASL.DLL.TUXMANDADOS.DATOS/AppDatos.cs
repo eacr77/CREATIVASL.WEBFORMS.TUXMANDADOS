@@ -98,7 +98,7 @@ namespace CREATIVASL.DLL.TUXMANDADOS.DATOS
             try
             {
                 object[] Valores = { user.opcion,user.usuario,user.email,user.password,user.nombre,user.ape_pat,user.ape_mat,user.direccion,user.fecha,
-                user.telefono,user.latitud,user.longitud};
+                user.telefono,user.latitud,user.longitud,user.cambioPass,user.idloc,user.idcli,user.idusu};
                 object res = SqlHelper.ExecuteScalar(user.conexion, "spCIDBD_ACUsuarioNormal", Valores);
                 user.resultado = "No se encontraron resultados";
                 if (res != null)
