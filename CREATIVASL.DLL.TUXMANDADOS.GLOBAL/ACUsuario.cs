@@ -93,6 +93,13 @@ namespace CREATIVASL.DLL.TUXMANDADOS.GLOBAL
             set { _longitud = value; }
         }
 
+        private bool _cambioPass;
+
+        public bool cambioPass
+        {
+            get { return _cambioPass; }
+            set { _cambioPass = value; }
+        }
 
         private int _idcli;
 
@@ -101,6 +108,21 @@ namespace CREATIVASL.DLL.TUXMANDADOS.GLOBAL
             get { return _idcli; }
             set { _idcli = value; }
         }
+        private int _idloc;
+
+        public int idloc
+        {
+            get { return _idloc; }
+            set { _idloc = value; }
+        }
+        private int _idusu;
+
+        public int idusu
+        {
+            get { return _idusu; }
+            set { _idusu = value; }
+        }
+
         private string _resultado;
         public string resultado
         {
