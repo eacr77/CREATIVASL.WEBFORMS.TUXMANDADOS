@@ -43,8 +43,6 @@ namespace CREATIVASL.WEBFORMS.TUXMANDADOS
                         loginApp.conexion = ConfigurationManager.ConnectionStrings["Conexion_App"].ConnectionString;
                         loginApp.usuario = solicitudLogin.usuario;
                         loginApp.password = solicitudLogin.password;
-                        //loginApp.usuario = "eacr77";
-                        //loginApp.password = "123456";
 
                         try
                         {

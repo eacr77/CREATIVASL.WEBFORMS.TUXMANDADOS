@@ -15,13 +15,22 @@ namespace CREATIVASL.DLL.TUXMANDADOS.GLOBAL
             get { return _result; }
             set { _result = value; }
         }
-        private int _id;
 
-        public int id
+        private Int64 _IDUsuario;
+        public Int64 IDUsuario
         {
-            get { return _id; }
-            set { _id = value; }
+            get { return _IDUsuario; }
+            set { _IDUsuario = value; }
         }
+
+        private Int64 _IDCOR;
+        public Int64 IDCOR
+        {
+            get { return _IDCOR; }
+            set { _IDCOR = value; }
+        }
+
+
         private string _token;
 
         public string token
@@ -29,9 +38,9 @@ namespace CREATIVASL.DLL.TUXMANDADOS.GLOBAL
             get { return _token; }
             set { _token = value; }
         }
-        private string _rol;
+        private Int64 _rol;
 
-        public string rol
+        public Int64 Rol
         {
             get { return _rol; }
             set { _rol = value; }
@@ -74,9 +83,10 @@ namespace CREATIVASL.DLL.TUXMANDADOS.GLOBAL
             LoginAppJson loginJson = new LoginAppJson
             {
                 resultado = _result,
-                id = _id,
+                IDUsuario = _IDUsuario,
+                IDCOR = _IDCOR,
                 token = _token,
-                rol = _rol
+                Rol = _rol
             };
             DatosJson += loginJson.ToJSON();
             DatosJson += "";

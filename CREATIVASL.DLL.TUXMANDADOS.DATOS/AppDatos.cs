@@ -29,18 +29,46 @@ namespace CREATIVASL.DLL.TUXMANDADOS.DATOS
                                     {
                                         login.resultado = "REGOK";
                                         login.result= Convert.ToInt32(ds.Tables[0].Rows[0]["resultado"]);
-                                        login.id= Convert.ToInt32(ds.Tables[0].Rows[0]["id"]);
+                                        login.IDUsuario= Convert.ToInt64(ds.Tables[0].Rows[0]["id"]);
+                                        login.IDCOR = Convert.ToInt64(ds.Tables[0].Rows[0]["id_cor"]);
                                         login.token = ds.Tables[0].Rows[0]["token"].ToString();
-                                        login.rol= ds.Tables[0].Rows[0]["rol"].ToString();
+                                        login.Rol= Convert.ToInt64(ds.Tables[0].Rows[0]["rol"]);
                                         login.GenerarJSON();
                                     }
                                     break;
                                 case 2:
                                     {
-                                        login.resultado = "Usuario o contraseña incorrecta";
+                                        login.resultado = "REGOK";
+                                        login.result = Convert.ToInt32(ds.Tables[0].Rows[0]["resultado"]);
+                                        login.IDUsuario = Convert.ToInt64(ds.Tables[0].Rows[0]["id"]);
+                                        login.IDCOR = Convert.ToInt64(ds.Tables[0].Rows[0]["id_cor"]);
+                                        login.token = ds.Tables[0].Rows[0]["token"].ToString();
+                                        login.Rol = Convert.ToInt64(ds.Tables[0].Rows[0]["rol"]);
+                                        login.GenerarJSON();
                                     }
                                     break;
                                 case 3:
+                                    {
+                                        login.resultado = "REGOK";
+                                        login.result = Convert.ToInt32(ds.Tables[0].Rows[0]["resultado"]);
+                                        login.IDUsuario = Convert.ToInt64(ds.Tables[0].Rows[0]["id"]);
+                                        login.IDCOR = Convert.ToInt64(ds.Tables[0].Rows[0]["id_cor"]);
+                                        login.token = ds.Tables[0].Rows[0]["token"].ToString();
+                                        login.Rol = Convert.ToInt64(ds.Tables[0].Rows[0]["rol"]);
+                                        login.GenerarJSON();
+                                    }
+                                    break;
+                                case 4:
+                                    {
+                                        login.resultado = "Usuario no encontrado, registrese por favor";
+                                    }
+                                    break;
+                                case 5:
+                                    {
+                                        login.resultado = "Usuario o contraseña incorrecta";
+                                    }
+                                    break;
+                                case 6:
                                     {
                                         login.resultado = "Usuario no encontrado, registrese por favor";
                                     }
