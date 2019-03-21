@@ -46,6 +46,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -80,9 +83,6 @@
     </Reference>
     <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -2334,7 +2334,6 @@
     <Content Include="assets\plugins\jQuery-File-Upload\server\gae-python\static\robots.txt" />
     <Content Include="assets\plugins\jQuery-File-Upload\server\node\.gitignore" />
     <Content Include="assets\plugins\jQuery-File-Upload\server\node\public\files\.gitignore" />
-    <Content Include="assets\plugins\jQuery-File-Upload\server\node\public\files\thumbnail\.gitignore" />
     <Content Include="assets\plugins\jQuery-File-Upload\server\node\server.js" />
     <Content Include="assets\plugins\jQuery-File-Upload\server\node\tmp\.gitignore" />
     <Content Include="assets\plugins\jQuery-File-Upload\server\php\files\.gitignore" />
@@ -3229,6 +3228,7 @@
     <Content Include="frmInfoUser.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmRecuperarContraseña.aspx" />
+    <Content Include="frmSetOrder.aspx" />
     <Content Include="frmSucces.aspx" />
     <Content Include="frmValidarCorreo.aspx" />
     <Content Include="Web.config">
@@ -3264,6 +3264,13 @@
     </Compile>
     <Compile Include="frmRecuperarContraseña.aspx.designer.cs">
       <DependentUpon>frmRecuperarContraseña.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetOrder.aspx.cs">
+      <DependentUpon>frmSetOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmSetOrder.aspx.designer.cs">
+      <DependentUpon>frmSetOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmSucces.aspx.cs">
       <DependentUpon>frmSucces.aspx</DependentUpon>
@@ -4226,6 +4233,7 @@
     <Folder Include="assets\plugins\bootstrap-datetimepicker\src\js\locales\" />
     <Folder Include="assets\plugins\bootstrap-datetimepicker\src\less\" />
     <Folder Include="assets\plugins\bootstrap-switch\src\test\" />
+    <Folder Include="assets\plugins\jQuery-File-Upload\server\node\public\files\thumbnail\" />
     <Folder Include="assets\plugins\jquery-inputlimiter\.svn\prop-base\" />
     <Folder Include="assets\plugins\jquery-inputlimiter\.svn\props\" />
     <Folder Include="assets\plugins\jquery-inputlimiter\.svn\tmp\prop-base\" />
