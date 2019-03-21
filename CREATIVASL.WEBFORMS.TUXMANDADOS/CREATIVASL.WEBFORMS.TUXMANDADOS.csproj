@@ -3992,7 +3992,6 @@
     <Content Include="assets\plugins\nvd3\package.json" />
     <Content Include="assets\plugins\nvd3\README.md" />
     <Content Include="assets\plugins\owl-carousel\LICENSE" />
-    <Content Include="assets\plugins\owl-carousel\owl-carousel\.DS_Store" />
     <Content Include="assets\plugins\owl-carousel\README.md" />
     <Content Include="assets\plugins\owl-carousel\__MACOSX\._assets" />
     <Content Include="assets\plugins\owl-carousel\__MACOSX\assets\._.DS_Store" />
