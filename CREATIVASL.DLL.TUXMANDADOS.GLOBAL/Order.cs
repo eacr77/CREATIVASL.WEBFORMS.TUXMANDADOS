@@ -25,7 +25,7 @@
         public TimeSpan? Hora_Entregado { get; set; }
 
         //[JsonProperty(PropertyName = "estado")]
-        public int Estado { get; set; }
+        public Int64 Estado { get; set; }
 
         //[JsonProperty(PropertyName = "descripcion")]
         public string Descripcion { get; set; }
@@ -52,9 +52,9 @@
         public Ubicacion Ubicacion { get; set; }
 
         //[JsonProperty(PropertyName = "cliente")]
-        public int? Cliente { get; set; }
+        public Int64? Cliente { get; set; }
 
         //[JsonProperty(PropertyName = "repartidor")]
-        public int? Repartidor { get; set; }
+        public Int64? Repartidor { get; set; }
     }
 }

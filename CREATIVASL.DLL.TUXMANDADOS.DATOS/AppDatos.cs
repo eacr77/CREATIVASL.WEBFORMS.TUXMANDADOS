@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Text;
 using System.Net.Http;
+using System.Collections.Generic;
 
 namespace CREATIVASL.DLL.TUXMANDADOS.DATOS
 {
@@ -115,6 +116,79 @@ namespace CREATIVASL.DLL.TUXMANDADOS.DATOS
                             obj.DatosJson = data;
                             
                         }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void GetOrderRepartidores(SolicitudGetOrdersRepartidor obj)
+        {
+            try
+            {
+
+                /*Int64 id_cliente = obj.IDCliente;
+                Int64 id_usuario = obj.IDUsuario;
+                int estado = obj.Order.Estado;
+                string descripcion = obj.Order.Descripcion;
+                double latitud = obj.Order.Ubicacion.Latitud;
+                double longitud = obj.Order.Ubicacion.Longitud;
+                */
+
+                object[] Valores = { obj.Usuario, obj.Token };
+                DataSet ds = SqlHelper.ExecuteDataset(obj.Conexion, "spCIDBD_get_Orders_Repartidores", Valores);
+                obj.Mensaje = "No se pudo insertar";
+
+                if (ds != null)
+                {
+                    if (ds.Tables.Count > 0)
+                    {
+                        List<Order> Lista = new List<Order>();
+                        Order Item;
+                        DataTableReader Dr = ds.Tables[0].CreateDataReader();
+                        while (Dr.Read())
+                        {
+                            Item = new Order();
+                            Item.ID = !Dr.IsDBNull(Dr.GetOrdinal("id_pedido")) ? Dr.GetInt64(Dr.GetOrdinal("id_pedido")) : 0;
+                            Item.Hora_Pedido =(TimeSpan)( !Dr.IsDBNull(Dr.GetOrdinal("hora_pedido")) ? Dr.GetValue(Dr.GetOrdinal("hora_pedido")) :TimeSpan.MinValue);
+                            Item.Hora_Pedido = (TimeSpan)(!Dr.IsDBNull(Dr.GetOrdinal("hora_entregado")) ? Dr.GetValue(Dr.GetOrdinal("hora_entregado")) : TimeSpan.MinValue);
+                            Item.Estado = !Dr.IsDBNull(Dr.GetOrdinal("estado")) ? Dr.GetInt64(Dr.GetOrdinal("estado")) : 0;
+                            Item.Descripcion = !Dr.IsDBNull(Dr.GetOrdinal("descripcion")) ? Dr.GetString(Dr.GetOrdinal("descripcion")) : string.Empty;
+                            Item.Hora_Pedido = (TimeSpan)(!Dr.IsDBNull(Dr.GetOrdinal("hora_entregado")) ? Dr.GetValue(Dr.GetOrdinal("hora_entregado")) : TimeSpan.MinValue);
+                            //Item.Total = !Dr.IsDBNull(Dr.GetOrdinal("Total")) ? Dr.GetDecimal(Dr.GetOrdinal("Total")) : 0;
+                            Lista.Add(Item);
+                        }
+                        Dr.Close();
+
+                        //obj.Order.ID = Convert.ToInt64(ds.Tables[0].Rows[0]["id_pedido"]);
+                        //String a = "a";
+                        //DataTableReader Dr = ds.Tables[0].CreateDataReader();
+                        /*
+                        //while (Dr.Read())
+                        {
+
+                            //obj.Order.ID = !Dr.IsDBNull(Dr.GetOrdinal("id_pedido")) ? Dr.GetInt64(Dr.GetOrdinal("id_pedido")) : 0 ;
+                            String a = "a";
+                            //Resultado.FechaFin = !Dr.IsDBNull(Dr.GetOrdinal("FechaFin")) ? Dr.GetDateTime(Dr.GetOrdinal("FechaFin")) : DateTime.MinValue;
+                            //Resultado.IDCliente = !Dr.IsDBNull(Dr.GetOrdinal("IDCliente")) ? Dr.GetString(Dr.GetOrdinal("IDCliente")) : string.Empty;
+                            //Resultado.Nombre = !Dr.IsDBNull(Dr.GetOrdinal("Nombre")) ? Dr.GetString(Dr.GetOrdinal("Nombre")) : string.Empty;
+                            break;
+                        }
+                        Dr.Close();
+
+                        obj.Mensaje = "success";
+                        obj.Order.ID = Convert.ToInt64(ds.Tables[0].Rows[0]["id_pedido"]);
+                        //obj.Order.Hora_Pedido = Convert.(ds.Tables[0].Rows[0]["hora_pedido"]);
+                        Serialize serialize = new Serialize(obj);
+                        string data = serialize.ToJSON();
+                        obj.DatosJson = data;
+                        */
+
+
                     }
                 }
             }

@@ -77,6 +77,12 @@ namespace CREATIVASL.DLL.TUXMANDADOS.GLOBAL
             get { return _DatosJson; }
             set { _DatosJson = value; }
         }
+        private string _mensaje;
+        public string Mensaje
+        {
+            get { return _mensaje; }
+            set { _mensaje = value; }
+        }
         public void GenerarJSON()
         {
             _DatosJson += "";

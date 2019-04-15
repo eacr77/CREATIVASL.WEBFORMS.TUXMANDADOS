@@ -10,5 +10,6 @@ namespace CREATIVASL.DLL.TUXMANDADOS.GLOBAL
     {
         public string usuario { get; set; }
         public string password { get; set; }
+        public string token { get; set; }
     }
 }

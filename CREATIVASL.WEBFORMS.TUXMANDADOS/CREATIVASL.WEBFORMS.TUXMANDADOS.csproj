@@ -3225,6 +3225,7 @@
     <Content Include="assets\plugins\x-editable\js\bootstrap-editable.js" />
     <Content Include="assets\plugins\x-editable\js\bootstrap-editable.min.js" />
     <Content Include="frmACUsuario.aspx" />
+    <Content Include="frmGetOrdersRepartidores.aspx" />
     <Content Include="frmInfoUser.aspx" />
     <Content Include="frmLogin.aspx" />
     <Content Include="frmRecuperarContraseña.aspx" />
@@ -3243,6 +3244,13 @@
     </Compile>
     <Compile Include="frmACUsuario.aspx.designer.cs">
       <DependentUpon>frmACUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmGetOrdersRepartidores.aspx.cs">
+      <DependentUpon>frmGetOrdersRepartidores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmGetOrdersRepartidores.aspx.designer.cs">
+      <DependentUpon>frmGetOrdersRepartidores.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmInfoUser.aspx.cs">
       <DependentUpon>frmInfoUser.aspx</DependentUpon>
